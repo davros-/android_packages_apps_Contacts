@@ -530,13 +530,6 @@ public class DialpadFragment extends Fragment
     }
 
     @Override
-    public void onStart() {
-        super.onStart();
-        configureScreenFromIntent(getActivity().getIntent());
-        setStartedFromNewIntent(false);
-    }
-
-    @Override
     public void onResume() {
         super.onResume();
 
@@ -660,6 +653,8 @@ public class DialpadFragment extends Fragment
         if (isT9On()) {
             mT9Search.refresh(mT9Callback);
         }
+        configureScreenFromIntent(getActivity().getIntent());
+        setStartedFromNewIntent(false);
     }
 
     @Override
